@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -12,12 +12,12 @@ export default function Home() {
           This is the homepage of your app. You can add content here!
         </p>
         <div className="mt-6">
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300"
           >
             Go to Login
-          </a>
+          </Link>
         </div>
       </div>
     </div>

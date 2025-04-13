@@ -6,10 +6,12 @@ import Cookies from "js-cookie";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       await api.post("/login", { email, password });
@@ -47,7 +49,9 @@ export default function Login() {
             </div>
             <button
               type="submit"
-              className="w-full py-2 bg-blue-500 text-white rounded-md"
+              className={`${
+                loading ? "cursor-not-allowed" : "cursor-pointer"
+              } w-full py-2 bg-blue-500 text-white rounded-md`}
             >
               Login
             </button>
