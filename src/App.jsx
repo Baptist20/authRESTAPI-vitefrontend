@@ -30,11 +30,11 @@ export default function App() {
           element: <Login />,
         },
         {
-          path: "/forgot-password",
+          path: "forgot-password",
           element: <ForgotPassword />,
         },
         {
-          path: "resetPassword/:token",
+          path: "reset-password",
           element: <ResetPassword />,
         },
         {

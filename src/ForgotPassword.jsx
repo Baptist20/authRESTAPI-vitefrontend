@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import api from "./api";
+import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await api.post("/forgot-password", { email });
       setMessage(res.data.message);
+      setTimeout(() => navigate("/reset-password"), 2000);
     } catch (err) {
       setMessage(err.response?.data?.message || "Something went wrong");
     }

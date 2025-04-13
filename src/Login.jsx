@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "./api";
-import Cookies from "js-cookie";
 
 export default function Login() {
   const [email, setEmail] = useState("");
