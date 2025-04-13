@@ -50,10 +50,10 @@ export default function Login() {
             <button
               type="submit"
               className={`${
-                loading ? "cursor-not-allowed" : "cursor-pointer"
+                loading ? "cursor-not-allowed bg-blue-300" : "cursor-pointer"
               } w-full py-2 bg-blue-500 text-white rounded-md`}
             >
-              Login
+              {loading ? "Logginng in...." : "Login"}
             </button>
           </form>
           <div className="text-right mt-2">
